@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Stories</title>
+  <link rel="stylesheet" href="travel_style.css">
+</head>
+<body>
+
+  <h1>Travel Destinations</h1>
+
+  <table>
+    <tr>
+      <th>Destination</th>
+      <th>Attraction</th>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <img src="eiffel.jpg" alt="Eiffel Tower" onclick="showDescription('eiffel')">
+      </td>
+    </tr>
+    <tr>
+      <td>Rome</td>
+      <td>
+        <img src="colosseum.jpg" alt="Colosseum" onclick="showDescription('colosseum')">
+      </td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>
+        <img src="statue.jpg" alt="Statue of Liberty" onclick="showDescription('statue')">
+      </td>
+    </tr>
+  </table>
+
+  <div class="description" id="eiffel-desc">
+    <h3>Eiffel Tower</h3>
+    <p>The Eiffel Tower is one of the most recognizable landmarks in the world, located in Paris, France. It was completed in 1889 and stands over 300 meters tall.</p>
+  </div>
+
+  <div class="description" id="colosseum-desc">
+    <h3>Colosseum</h3>
+    <p>The Colosseum is an ancient amphitheater in Rome, Italy. It was used for gladiator contests and public spectacles during the Roman Empire.</p>
+  </div>
+
+  <div class="description" id="statue-desc">
+    <h3>Statue of Liberty</h3>
+    <p>The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor. It is a symbol of freedom and democracy in the United States.</p>
+  </div>
+
+  <script>
+    function showDescription(id) {
+      const descriptions = document.querySelectorAll('.description');
+      descriptions.forEach(desc => desc.style.display = 'none');
+      document.getElementById(id + '-desc').style.display = 'block';
+    }
+
+    // Hide all descriptions by default
+    window.onload = () => {
+      const descriptions = document.querySelectorAll('.description');
+      descriptions.forEach(desc => desc.style.display = 'none');
+    };
+  </script>
+
+</body>
+</html>
